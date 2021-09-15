@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Adivinha 2.0</title>
+
+</head>
+
+<body>
+
+	<input type="text">
+	<button>Verifique!</button>
+
+	<script>
+		
+		var sorteio = Math.round(Math.random()*10);
+		var input = document.querySelector("input");
+		
+
+		function jogo(){
+
+			if(input.value == sorteio){
+
+				alert("Você acertou!!!");
+
+			}else{
+
+				alert("Você errou!!!!!");
+			}
+
+			input.focus();
+			input.value = "";
+		}
+
+		var button = document.querySelector("button");
+		button.onclick = jogo;
+
+
+	</script>
+
+</body>
+
+</html>

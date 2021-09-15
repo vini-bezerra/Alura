@@ -1,0 +1,49 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+	
+	var tela = document.querySelector('canvas');
+	var pincel = tela.getContext('2d');
+
+	pincel.fillStyle = 'lightgray';
+	pincel.fillRect(0,0,600,400);
+
+	function bolinhaPulsante(x,y,raio){
+
+		pincel.fillStyle = 'blue';
+		pincel.beginPath();
+		pincel.arc(x, y, raio, 0, 2 * 3.14);
+		pincel.fill();
+	}
+
+	function limpaRetangulo(){
+
+		pincel.clearRect(0,0,600,400);
+	}
+
+	var tamanho = 20;
+	var pulsacao = 1;
+
+	function atualizaTela(){
+
+		limpaRetangulo();
+
+		if(tamanho == 30){
+
+		pulsacao = -1;
+
+		}else if(tamanho == 20){
+
+			pulsacao = 1;
+
+		}
+
+		tamanho = tamanho + pulsacao;
+
+		bolinhaPulsante(300,200,tamanho);
+
+	}
+
+	setInterval(atualizaTela, 20);
+
+</script>
