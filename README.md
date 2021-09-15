@@ -1,2 +1,2 @@
-# Alura
+#Lógica-I
 Meus códigos Alura!
